@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface KeyRepository {
     List<KeyDomain> saveData(KeyDomain keyDomain);
     List<KeyDomain> selectAllKey();
-    Optional<KeyDomain> selectDataByKey(String key);
+    Optional<KeyDomain> checkDataByKey(String key);
 }

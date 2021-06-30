@@ -33,8 +33,8 @@ public class KeyController {
     @GetMapping
     public HashMap selectDataByKey(@PathVariable("key") String key){
         HashMap<String, String> rtnList = new HashMap<>();
-        Optional<KeyDomain> tmp =  keyService.selectDataByKey(key);
-//        rtnList.put("value",tmp.get().getValue());
+        String tmpValue =  keyService.generateKey(key);
+        rtnList.put("value",tmpValue);
         return rtnList;
     }
 }

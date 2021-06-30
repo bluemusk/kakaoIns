@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository("Dao")
 public class MemoryKeyRepository implements KeyRepository {
 
     private static List<KeyDomain> DB = new ArrayList<>();
@@ -13,7 +12,6 @@ public class MemoryKeyRepository implements KeyRepository {
 
     @Override
     public List<KeyDomain> saveData(KeyDomain keyDomain) {
-
         DB.add(new KeyDomain(keyDomain.getKey()
                 , keyDomain.getDescription()
                 , keyDomain.getType()
@@ -30,7 +28,7 @@ public class MemoryKeyRepository implements KeyRepository {
     }
 
     @Override
-    public Optional<KeyDomain> selectDataByKey(String keyIn) {
+    public Optional<KeyDomain> checkDataByKey(String keyIn) {
         return DB.stream().filter(keyDomain -> keyDomain.getKey().equals(keyIn)).findAny();
     }
 
