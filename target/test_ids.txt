@@ -1,1 +1,3 @@
+[engine:junit-jupiter]/[class:com.key.gen.service.KeyServiceTest]/[method:checkDataByKey()]
+[engine:junit-jupiter]/[class:com.key.gen.service.KeyServiceTest]/[method:generateKey()]
 [engine:junit-jupiter]/[class:com.key.gen.service.KeyServiceTest]/[method:saveData()]
