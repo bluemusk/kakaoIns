@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -35,11 +36,21 @@ class KeyServiceTest {
     }
 
     @Test
-    void selectAllKey() {
-    }
-
-    @Test
     void checkDataByKey() {
+        keyDomain.setKey("policy-number");
+        keyService.saveData(keyDomain);
+
+        Optional<KeyDomain> result = keyService.checkDataByKey(keyDomain.getKey());
+        if(result.isPresent()){
+            System.out.println("성공");
+        }
+
+        keyDomain.setKey("claim-number");
+
+        Optional<KeyDomain> result2 = keyService.checkDataByKey(keyDomain.getKey());
+        if(result2.isEmpty()){
+            System.out.println("실퍠");
+        }
     }
 
     @Test
