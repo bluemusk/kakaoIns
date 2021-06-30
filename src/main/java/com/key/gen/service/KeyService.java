@@ -3,8 +3,6 @@ package com.key.gen.service;
 import com.key.gen.domain.KeyDomain;
 import com.key.gen.repository.KeyRepository;
 import com.key.gen.repository.MemoryKeyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

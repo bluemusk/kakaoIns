@@ -22,6 +22,11 @@ class KeyServiceTest {
         keyDomain.setMinLength(2);
 
         keyService.saveData(keyDomain);
+        try {
+            keyService.saveData(keyDomain);
+        }catch(IllegalStateException e){
+            org.assertj.core.api.Assertions.assertThat(e.getMessage()).isEqualTo("이미 존재하는 Key입니다.");
+        }
 
         keyDomain = new KeyDomain();
 
@@ -30,7 +35,8 @@ class KeyServiceTest {
         keyDomain.setType("string");
 
         keyService.saveData(keyDomain);
-
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> keyService.saveData(keyDomain));
+        org.assertj.core.api.Assertions.assertThat(e.getMessage()).isEqualTo("이미 존재하는 Key입니다.");
         List<KeyDomain> result = keyService.selectAllKey();
         org.assertj.core.api.Assertions.assertThat(result.size()).isEqualTo(2);
     }
