@@ -3,7 +3,6 @@ package com.key.gen.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class KeyDomain {
-    //    private String value;
     private String key;
     private String description;
     private String type;

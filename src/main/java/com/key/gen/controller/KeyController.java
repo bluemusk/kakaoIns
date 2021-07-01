@@ -17,18 +17,21 @@ public class KeyController {
         this.keyService = keyService;
     }
 
+    // api/key/register로 접근 (Key정보 저장)
     @RequestMapping("api/key/register")
     @PostMapping
     public void saveData(@RequestBody KeyDomain keyDomain){
         keyService.saveData(keyDomain);
     }
 
+    // api/key/allKey로 접근 (모든 Key정보 조회)
     @RequestMapping("api/key/allKey")
     @GetMapping
     public List<KeyDomain> selectAllKey(){
         return keyService.selectAllKey();
     }
 
+    // api/key/키 이름 (Key발급)
     @RequestMapping("api/key/{key}")
     @GetMapping
     public HashMap selectDataByKey(@PathVariable("key") String key){
