@@ -23,7 +23,7 @@ public class KeyController {
     public void saveData(@RequestBody KeyDomain keyDomain){
         keyService.saveData(keyDomain);
     }
-
+ 
     // api/key/allKey로 접근 (모든 Key정보 조회)
     @RequestMapping("api/key/allKey")
     @GetMapping

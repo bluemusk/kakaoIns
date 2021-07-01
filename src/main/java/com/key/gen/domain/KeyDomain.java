@@ -10,6 +10,7 @@ public class KeyDomain {
     private Integer minLength;
     private Integer seq;
 
+    // 항목정의
     public KeyDomain(
             @JsonProperty("key") String key,
             @JsonProperty("description") String description,

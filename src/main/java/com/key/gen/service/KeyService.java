@@ -14,7 +14,7 @@ public class KeyService {
     private final KeyRepository keyRepository = new MemoryKeyRepository();
     private static double genNum = 0;
 
-    // 키 정보 저장
+    // 키 정보 Save
     public List<KeyDomain> saveData(KeyDomain keyDomain){
         // 입력된 Key를 통해 중복 체크
         Boolean chkDup = keyRepository.checkDataByKey(keyDomain.getKey())

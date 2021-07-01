@@ -8,13 +8,14 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// keyService Test
 class KeyServiceTest {
     KeyDomain keyDomain = new KeyDomain();
     KeyService keyService = new KeyService();
 
     @Test
     void saveData() {
-        //데이터 세팅
+        //데이터 Setting
         keyDomain.setKey("policy-number");
         keyDomain.setDescription("보험 증서 번호에 사용할 KEY 값으로 테이블 PK 로 사용");
         keyDomain.setGenerator("mysql");
